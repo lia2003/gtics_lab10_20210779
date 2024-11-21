@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot FOSTENA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            margin: 20px auto;
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        #gameBoard {
+            display: grid;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            aspect-ratio: 1 / 1;
+            grid-template-rows: repeat(10, 1fr);
+            grid-template-columns: repeat(10, 1fr);
+        }
+
+        .grid-cell {
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .hidden {
+            background-color: #fff;
+        }
+
+        .visible {
+            background-color: #e0e0e0;
+        }
+
+        #toggleObstacles {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Robot FOSTENA - Prueba Piloto</h1>
+<div id="container">
+    <textarea id="gameMap" placeholder="Ingrese el mapa del juego aquí"></textarea>
+    <button id="startGame" onclick="startGame()">Iniciar el juego</button>
+</div>
+<div id="gameBoard"></div>
+<button id="toggleObstacles" style="display: none;" onclick="toggleObstacles()">Mostrar obstáculos</button>
+<script src="fostena.js"></script>
+</body>
+</html>
